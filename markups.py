@@ -4,13 +4,13 @@ from aiogram.utils import callback_data
 
 
 
-btnUrlChannel = InlineKeyboardButton(text="ПОДПИСАТЬСЯ", url="https://t.me/obemubeosa")
+btnUrlChannel = InlineKeyboardButton(text="ПОДПИСАТЬСЯ", url="")
 
 btnDoneSub = InlineKeyboardButton(text="ПОЛУЧИТЬ ПОДАРОК", callback_data="subchanneldone")
 
 btnDoneSubs = InlineKeyboardMarkup(text="ПОЛУЧИТЬ ПОДАРОК", callback_data="podpiska")
 
-btnServ = InlineKeyboardMarkup(text="ПЕРЕЙТИ В СЕРВИС", url="https://mig24.online/")
+btnServ = InlineKeyboardMarkup(text="ПЕРЕЙТИ В СЕРВИС", url="")
 
 checkSubMenu = InlineKeyboardMarkup(row_width = 1)
 checkSubMenu.insert(btnUrlChannel)
