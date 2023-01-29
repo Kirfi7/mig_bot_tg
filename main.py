@@ -6,8 +6,8 @@ import markups as nav
 # from db import Database
 from re import fullmatch
 
-TOKEN = "5562917735:AAHdDdz0IKnsMTxmNMlzA-X3QfUJXF40xDs"
-CHANNEL_ID = "@obemubeosa"
+TOKEN = ""
+CHANNEL_ID = ""
 NOTSUB_MESSAGE = "Здравствуйте! Поздравляем! Вы можете получить бесплатную подписку на наш сервис МИГ24 на один месяц! Вам необходимо быть подписанным на наш канал https://t.me/mig24ru и предоставить СНИЛС!"
 logging.basicConfig(level=logging.INFO)
 bot = Bot(token=TOKEN)
