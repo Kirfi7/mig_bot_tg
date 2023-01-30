@@ -8,7 +8,7 @@ from re import fullmatch
 
 TOKEN = ""
 CHANNEL_ID = ""
-NOTSUB_MESSAGE = "Здравствуйте! Поздравляем! Вы можете получить бесплатную подписку на наш сервис МИГ24 на один месяц! Вам необходимо быть подписанным на наш канал https://t.me/mig24ru и предоставить СНИЛС!"
+NOTSUB_MESSAGE = "Здравствуйте! Поздравляем! Вы можете получить бесплатную подписку на наш сервис МИГ24 на один месяц! Вам необходимо быть подписанным на наш канал ррррр и предоставить СНИЛС!"
 logging.basicConfig(level=logging.INFO)
 bot = Bot(token=TOKEN)
 dp = Dispatcher(bot)
@@ -26,7 +26,7 @@ def check_sub_channel(chat_member):
 async def start(message: types.Message):
     if message.chat.type == 'private':
         if check_sub_channel(await bot.get_chat_member(chat_id=CHANNEL_ID, user_id=message.from_user.id)):
-            await bot.send_message(message.from_user.id, "Здравствуйте! Поздравляем! Вы можете получить бесплатную подписку на наш сервис МИГ24 на один месяц! Вам необходимо быть подписанным на наш канал https://t.me/mig24ru и предоставить СНИЛС!", reply_markup=nav.mespodpiska)
+            await bot.send_message(message.from_user.id, "Здравствуйте! Поздравляем! Вы можете получить бесплатную подписку на наш сервис МИГ24 на один месяц! Вам необходимо быть подписанным на наш канал ррррр и предоставить СНИЛС!", reply_markup=nav.mespodpiska)
         else:
             await bot.send_message(message.from_user.id, NOTSUB_MESSAGE, reply_markup = nav.checkSubMenu)
 
@@ -58,14 +58,14 @@ async def bm(message: types.Message):
 
                     snl = message.text
                     ssnil = snl[0] + snl[1] + snl[2] + snl[4] + snl[5] + snl[6] + snl[8] + snl[9] + snl[10] + snl[12] + snl[13]
-                    parm = {"Secret": "d75edff5-3bac-4b11-b71a-428a449e00f3", "Snils": ssnil,
+                    parm = {"Secret": "", "Snils": ssnil,
                             "TgId": message.from_user.id}
                     try:
-                        response = requests.get('https://pay.ntssoft.ru/funcs/add_present.php?', params=parm, verify=False, timeout=10)
+                        response = requests.get('', params=parm, verify=False, timeout=10)
                         json_data = response.text
                         data_dict = json.loads(json_data)
                         if data_dict.get('Success') == True:
-                            await bot.send_message(message.from_user.id, "Поздравляем, Вам подключен подарок - месяц бесплатного использования сервиса МИГ24! Держите ссылку: https://mig24.online/", reply_markup=nav.Servis)
+                            await bot.send_message(message.from_user.id, "Поздравляем, Вам подключен подарок - месяц бесплатного использования сервиса МИГ24! Держите ссылку: ррррр", reply_markup=nav.Servis)
                         # db.set_snils(message.from_user.id, message.text)
                         # db.set_signup(message.from_user.id, "done")
                         elif data_dict.get('Success') == False:
@@ -83,7 +83,7 @@ async def bm(message: types.Message):
 
 
             else:
-                await bot.send_message(message.from_user.id, "Здравствуйте! Поздравляем! Вы можете получить бесплатную подписку на наш сервис МИГ24 на один месяц! Вам необходимо быть подписанным на наш канал https://t.me/mig24ru и предоставить СНИЛС!", reply_markup=nav.checkSubMenu)
+                await bot.send_message(message.from_user.id, "Здравствуйте! Поздравляем! Вы можете получить бесплатную подписку на наш сервис МИГ24 на один месяц! Вам необходимо быть подписанным на наш канал ррррр и предоставить СНИЛС!", reply_markup=nav.checkSubMenu)
         # else:
         #     await bot.send_message(message.from_user.id, "ERROR")
 
